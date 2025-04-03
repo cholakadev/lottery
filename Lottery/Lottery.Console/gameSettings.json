@@ -1,0 +1,12 @@
+{
+  "TicketPrice": 1.0,
+  "PlayerBalance": 10.0,
+  "MaxTicketsPerPlayer": 10,
+  "MinCpuPlayers": 10,
+  "MaxCpuPlayers": 14,
+  "GrandPrizePercentageOfRevenue": 50,
+  "SecondTierPrizePercentageOfRevenue": 30,
+  "ThirdTierPrizePercentageOfRevenue": 10,
+  "SecondTierPrizeWinnersPercentage": 10,
+  "ThirdTierPrizeWinnersPercentage": 20
+}
