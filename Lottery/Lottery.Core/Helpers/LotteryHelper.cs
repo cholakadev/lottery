@@ -5,10 +5,9 @@ namespace Lottery.Core.Helpers
 {
     public class LotteryHelper
     {
-        // TODO: Extract the ticket purchasing into a separate method?
         public List<Player> GenerateCpuPlayers(int count, GameSettings settings)
         {
-            if (count < 10 || count > 14)
+            if (count < settings.MinCpuPlayers || count > settings.MaxCpuPlayers)
                 throw new ArgumentOutOfRangeException(nameof(count), "CPU players count must be between 10 and 14");
 
             var players = new List<Player>();
@@ -18,7 +17,7 @@ namespace Lottery.Core.Helpers
             {
                 var player = new Player(playerNumber: i, settings);
 
-                var ticketsToPurchase = random.Next(1, 11);
+                var ticketsToPurchase = random.Next(1, settings.MaxTicketsPerPlayer);
                 var tickets = Enumerable.Range(0, ticketsToPurchase).Select(_ => new Ticket(player, settings)).ToList();
 
                 player.PurchaseTickets(tickets);
